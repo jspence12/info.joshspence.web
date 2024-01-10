@@ -7,10 +7,7 @@ export interface WorkHistoryItemProps {
 export default function WorkHistoryItem(props: WorkHistoryItemProps) {
   const { job } = { ...props };
   return (
-    <article
-      className="border-solid border-2 border-black"
-      aria-label={`${job.company} experience`}
-    >
+    <article aria-label={`${job.company} experience`}>
       <header className="sticky top-0 bg-white">
         <div className="flex justify-between text-lg font-bold mx-4">
           <a href={job.url}>{job.company}</a>
