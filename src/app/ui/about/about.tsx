@@ -1,7 +1,6 @@
 export default function About() {
   return (
     <section aria-label="About">
-      <h2 className="text-6xl">About</h2>
       <article className="flex flex-col justify-center">
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

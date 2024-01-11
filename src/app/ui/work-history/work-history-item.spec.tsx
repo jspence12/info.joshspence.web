@@ -20,7 +20,9 @@ describe(WorkHistoryItem.name, () => {
     "renders job information",
     (endYear: number | undefined, rendered: string) => {
       const job: Job = { ...setupJob(), endYear };
-      const sut = render(<WorkHistoryItem job={job} />);
+      const sut = render(
+        <WorkHistoryItem job={job} isExpanded={true} onClick={() => {}} />,
+      );
       expect(sut.getByText(job.company)).toBeInTheDocument();
       expect(
         sut.getByText(`${job.startYear} - ${rendered}`),

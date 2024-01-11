@@ -42,7 +42,7 @@ export default function ConsoleHeader(props: ConsoleHeaderProps) {
   }, [title, subtitle]);
 
   return (
-    <div className="bg-zinc-700 max-sm:h-50 h-80 max-sm:pt-10 pt-20">
+    <div className="bg-black max-sm:h-50 h-80 max-sm:pt-10 pt-20 font-mono">
       <header className="hero max-w-screen-xl flex items-center text-white mx-12">
         <hgroup>
           <h1
@@ -50,7 +50,7 @@ export default function ConsoleHeader(props: ConsoleHeaderProps) {
             aria-label={title}
           >
             {header}
-            {showCursor && "|"}
+            {showCursor && "_"}
           </h1>
           <p
             role="doc-subtitle"

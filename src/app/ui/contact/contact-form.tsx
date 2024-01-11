@@ -12,7 +12,7 @@ export default function ContactForm() {
           Name
         </label>
         <input
-          className="w-full"
+          className="w-full text-black"
           id={fieldIds.name}
           name="name"
           type="text"
@@ -25,7 +25,7 @@ export default function ContactForm() {
           Email
         </label>
         <input
-          className="w-full"
+          className="w-full text-black"
           id={fieldIds.email}
           name="email"
           type="email"
@@ -38,9 +38,11 @@ export default function ContactForm() {
           Message
         </label>
         <textarea
-          className="w-full"
+          className="w-full resize-none text-black"
           id={fieldIds.message}
           name="message"
+          maxLength={2000}
+          rows={10}
           required
         ></textarea>
       </div>
