@@ -46,7 +46,7 @@ export default function ConsoleHeader(props: ConsoleHeaderProps) {
       <header className="hero max-w-screen-xl flex items-center text-white mx-12">
         <hgroup>
           <h1
-            className="max-sm:text-6xl sm:text-7xl lg:text-8xl mb-3"
+            className="max-sm:text-6xl sm:text-7xl lg:text-8xl mb-3 ease-in-out transition"
             aria-label={title}
           >
             {header}

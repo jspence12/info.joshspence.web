@@ -14,7 +14,10 @@ export default function WorkHistoryItem({
   return (
     <article aria-label={`${job.company} experience`}>
       <button
-        className="max-md:sticky max-md:top-0 cursor-pointer w-full text-start border-white border-2 rounded-md flex justify-between mb-2 bg-zinc-800"
+        className={`max-md:sticky max-md:top-0 cursor-pointer w-full text-start 
+        border-white border-2 rounded-md flex justify-between mb-2 ${
+          isExpanded ? "bg-zinc-700" : "bg-zinc-800"
+        } focus:bg-zinc-600 hover:bg-zinc-600 transition-colors`}
         aria-expanded={isExpanded}
         onClick={onClick}
       >
@@ -28,7 +31,7 @@ export default function WorkHistoryItem({
           </div>
         </div>
         <div
-          className={`m-2 w-10 h-full ${
+          className={`m-2 w-10 h-full transition duration-200 ${
             isExpanded ? "rotate-180" : "rotate-0"
           }`}
         >
