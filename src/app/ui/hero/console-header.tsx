@@ -42,7 +42,7 @@ export default function ConsoleHeader(props: ConsoleHeaderProps) {
   }, [title, subtitle]);
 
   return (
-    <div className="bg-black max-sm:h-50 h-80 max-sm:pt-10 pt-20 font-mono">
+    <div className="bg-zinc-900 max-sm:h-50 h-80 min-h-full max-sm:pt-10 pt-20 font-mono shadow-lg">
       <header className="hero max-w-screen-xl flex items-center text-white mx-12">
         <hgroup>
           <h1

@@ -32,14 +32,14 @@ export default function WorkHistoryItem({
         </div>
         <div
           className={`m-2 w-10 h-full transition duration-200 ${
-            isExpanded ? "rotate-180" : "rotate-0"
+            isExpanded && "rotate-180"
           }`}
         >
           <Chevron />
         </div>
       </button>
       <ul
-        className={`m-4 ${!isExpanded && "hidden"}`}
+        className={`p-4 ${!isExpanded && "hidden"}`}
         aria-label={`${job.company} responsibilites`}
         aria-hidden={!isExpanded}
       >

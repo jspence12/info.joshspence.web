@@ -9,22 +9,25 @@ import Section from "./ui/common/section";
 
 export default function Home() {
   return (
-    <div className="bg-zinc-800 font-mono">
-      <div className="w-full">
-        <Hero />
-        <main className="grid grid-cols-2 gap-8 m-8 max-md:m-2 bg">
-          <div className="absolute bg-white w-60 h-40 z-0 -ms-1 -mt-1 rounded-" />
-          <Section title="Hello World">
+    <div className="w-full font-mono">
+      <Hero />
+      <main className="m-8 max-md:m-2">
+        <div className="grid grid-cols-2">
+          <Section title="Hello World!">
             <About />
           </Section>
           <Section title="Experience">
             <WorkHistory jobs={workExperience} />
           </Section>
-          <Section title="Contact">
-            <ContactForm />
-          </Section>
-        </main>
-      </div>
+        </div>
+        <div className="flex justify-center">
+          <div className="w-full max-w-screen-md">
+            <Section title="Contact">
+              <ContactForm />
+            </Section>
+          </div>
+        </div>
+      </main>
     </div>
   );
 }
