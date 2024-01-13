@@ -9,10 +9,10 @@ import Section from "./ui/common/section";
 
 export default function Home() {
   return (
-    <div className="w-full font-mono">
+    <div className="w-full font-mono text-gray-200">
       <Hero />
-      <main className="m-8 max-md:m-2">
-        <div className="grid grid-cols-2">
+      <main className=" max-md:m-2">
+        <div className="grid grid-cols-2 m-8">
           <Section title="Hello World!">
             <About />
           </Section>

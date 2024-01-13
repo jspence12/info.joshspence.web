@@ -8,7 +8,7 @@ export interface SectionProps {
 export default function Section({ children, title }: SectionProps) {
   return (
     <>
-      <section className={`max-md:col-span-2 z-10 p-4 font-bold text-gray-200`}>
+      <section className={`max-md:col-span-2 z-10 p-4 font-bold`}>
         <h4 className="text-6xl ms-6 mb-2">{title}</h4>
         {children}
       </section>

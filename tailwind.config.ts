@@ -17,6 +17,9 @@ const config: Config = {
         "50": "12.5rem",
         "nav-height": "3.75rem",
       },
+      colors: {
+        accent: "#58B09C",
+      },
     },
   },
   plugins: [],
