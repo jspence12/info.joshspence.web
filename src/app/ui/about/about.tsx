@@ -1,33 +1,23 @@
 export default function About() {
+  const yearsExperience = new Date().getFullYear() - 2019;
   return (
     <section aria-label="About">
-      <article className="flex flex-col justify-center">
+      <article>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Tortor at
-          auctor urna nunc id cursus metus aliquam. Tortor vitae purus faucibus
-          ornare suspendisse sed. Lacus sed viverra tellus in hac habitasse
-          platea dictumst vestibulum. Hendrerit dolor magna eget est lorem ipsum
-          dolor sit. Sapien nec sagittis aliquam malesuada bibendum arcu vitae
-          elementum. Nisi porta lorem mollis aliquam ut porttitor leo a diam.
-          Tempor commodo ullamcorper a lacus. A lacus vestibulum sed arcu non
-          odio. Malesuada nunc vel risus commodo viverra maecenas accumsan. Enim
-          nulla aliquet porttitor lacus luctus accumsan tortor posuere ac. Vel
-          elit scelerisque mauris pellentesque pulvinar pellentesque habitant.
-          Amet tellus cras adipiscing enim eu. Integer eget aliquet nibh
-          praesent tristique magna sit.
+          I'm Josh, a back-end engineer with full stack chops! For{" "}
+          {yearsExperience} years and counting, I've helped companies write
+          maintainable software at scale. I've worked on applications with
+          architectures ranging from massive, on-premises-hosted monoliths to
+          complex, cloud-based microservices.
         </p>
         <br />
         <p>
-          Amet purus gravida quis blandit. Ut faucibus pulvinar elementum
-          integer enim. Est ullamcorper eget nulla facilisi etiam. Ultricies
-          lacus sed turpis tincidunt. Nunc id cursus metus aliquam eleifend mi.
-          Vulputate enim nulla aliquet porttitor. A lacus vestibulum sed arcu
-          non odio euismod lacinia at. Amet nisl purus in mollis nunc. Aliquet
-          porttitor lacus luctus accumsan tortor. Ultricies tristique nulla
-          aliquet enim tortor at auctor urna. Gravida in fermentum et
-          sollicitudin ac orci phasellus egestas.
+          I love seeing the projects and teams I work with on thrive. Who knows
+          — maybe that next team will be yours! Let's talk:
         </p>
+        <div className="flex justify-center mt-4 gap-4">
+          <button>Download Résumé</button>|<button>Contact</button>
+        </div>
       </article>
     </section>
   );

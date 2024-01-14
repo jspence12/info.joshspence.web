@@ -42,26 +42,28 @@ export default function ConsoleHeader(props: ConsoleHeaderProps) {
   }, [title, subtitle]);
 
   return (
-    <div className="bg-zinc-900 max-sm:h-50 h-80 min-h-full max-sm:pt-10 pt-20 font-mono shadow-lg">
-      <header className="hero max-w-screen-xl flex items-center text-white mx-12">
-        <hgroup>
-          <h1
-            className="max-sm:text-6xl sm:text-7xl lg:text-8xl mb-3 ease-in-out transition"
-            aria-label={title}
-          >
-            {header}
-            {showCursor && "_"}
-          </h1>
-          <p
-            role="doc-subtitle"
-            className={`max-sm:text-3xl sm:text-4xl lg:text-6xl ${
-              showSubtitle ? "visible" : "invisible"
-            }`}
-          >
-            {subtitle}
-          </p>
-        </hgroup>
-      </header>
+    <div className="y-center bg-zinc-900 shadow-lg py-12">
+      <div className="x-center w-full">
+        <header className="hero flex text-white mx-12 max-md:justify-center max-w-screen-3xl w-full">
+          <hgroup>
+            <h1
+              className=" text-6xl sm:text-7xl lg:text-8xl mb-3 transition min-h-16 lg:h-24"
+              aria-label={title}
+            >
+              {header}
+              {showCursor && "_"}
+            </h1>
+            <p
+              role="doc-subtitle"
+              className={`max-sm:text-3xl sm:text-4xl lg:text-6xl max-md:text-center ${
+                showSubtitle ? "visible" : "invisible"
+              }`}
+            >
+              {subtitle}
+            </p>
+          </hgroup>
+        </header>
+      </div>
     </div>
   );
 }
