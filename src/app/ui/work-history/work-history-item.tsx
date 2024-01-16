@@ -1,5 +1,6 @@
 import Job from "@/app/lib/models/job";
 import Chip from "../common/chip";
+import Link from "../../../../public/link";
 
 export interface WorkHistoryItemProps {
   job: Job;
@@ -42,8 +43,11 @@ export default function WorkHistoryItem({
     >
       <div className="flex text-lg flex-wrap justify-between">
         <a href={job.url}>
-          <h4 className="mx-4 text-yellow-100 hover:text-xl transition-all duration-300 hover:text-yellow-50 ease-in">
+          <h4 className="mx-4 text-yellow-100 hover:text-xl transition-all duration-300 hover:text-yellow-50 ease-in flex gap-1 align-middle">
             {job.company}
+            <span className="flex flex-col justify-center">
+              <Link className="w-4 h-4 text-center" />
+            </span>
           </h4>
         </a>
         <h4 className="mx-4">{dateRange}</h4>

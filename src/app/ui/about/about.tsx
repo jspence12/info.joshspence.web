@@ -27,11 +27,13 @@ export default function About() {
           — maybe that next team will be yours! Let's talk:
         </p>
       </article>
-      <div className="flex flex-wrap justify-center gap-2 my-8">
-        <Button text="Résumé" disabled onClick={() => {}} />
-        <Button text="Contact" onClick={() => {}} />
+      <div>
+        <div className="flex flex-wrap justify-center gap-2 my-8">
+          <Button text="Résumé" disabled onClick={() => {}} />
+          <Button text="Contact" onClick={() => {}} />
+        </div>
+        <Footer />
       </div>
-      <Footer />
     </section>
   );
 }
