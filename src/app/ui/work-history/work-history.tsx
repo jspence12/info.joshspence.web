@@ -14,7 +14,7 @@ export default function WorkHistory({ jobs }: WorkHistoryProps) {
 
   return (
     <section
-      className="max-md:col-span-2 md:overflow-y-auto h-full py-6 snap-y"
+      className="max-md:col-span-2 md:overflow-y-auto h-full py-6"
       aria-label="work experience"
     >
       <h4 className="text-5xl ps-6 mb-2 font-bold">Experience</h4>
