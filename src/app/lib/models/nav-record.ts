@@ -1,5 +1,5 @@
 export default interface NavRecord {
-  image: string;
+  image: React.ReactElement;
   altText: string;
   href: string;
   isDownload: boolean | undefined;

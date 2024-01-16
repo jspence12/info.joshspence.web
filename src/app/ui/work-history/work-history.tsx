@@ -9,24 +9,25 @@ export interface WorkHistoryProps {
 export default function WorkHistory({ jobs }: WorkHistoryProps) {
   const [openItem, setOpenItem] = useState("");
 
-  const onItemClick = (selectedItem: string): void => {
-    if (openItem === selectedItem) {
-      setOpenItem("");
-    } else {
-      setOpenItem(selectedItem);
-    }
-  };
+  const onPointerEnter = (company: string) => setOpenItem(company);
+  const onPointerLeave = () => setOpenItem("");
 
   return (
-    <section className="w-full" id="Experience" aria-label="work experience">
+    <section
+      className="max-md:col-span-2 md:overflow-y-auto h-full py-6 snap-y"
+      aria-label="work experience"
+    >
+      <h4 className="text-5xl ps-6 mb-2 font-bold">Experience</h4>
       {jobs.map((job) => (
         <WorkHistoryItem
           job={job}
           key={job.company}
-          isExpanded={openItem == job.company}
-          onClick={() => {
-            onItemClick(job.company);
+          isInFocus={openItem == job.company}
+          isAnyInFocus={openItem !== ""}
+          onPointerEnter={() => {
+            onPointerEnter(job.company);
           }}
+          onPointerLeave={onPointerLeave}
         />
       ))}
     </section>

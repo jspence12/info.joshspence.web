@@ -2,47 +2,50 @@ import Job from "@/app/lib/models/job";
 import Chevron from "@/../public/chevron-up";
 export interface WorkHistoryItemProps {
   job: Job;
-  isExpanded: boolean;
-  onClick: () => void;
+  isInFocus: boolean;
+  isAnyInFocus: boolean;
+  onPointerEnter: () => void;
+  onPointerLeave: () => void;
 }
 
 export default function WorkHistoryItem({
   job,
-  isExpanded,
-  onClick,
+  isInFocus,
+  isAnyInFocus,
+  onPointerEnter,
+  onPointerLeave,
 }: WorkHistoryItemProps) {
+  const dateRange = `${job.startYear} - ${job.endYear || "Present"}`;
+  const getFocusStyle = () => {
+    if (isInFocus) {
+      return "hover:border-gray-200 hover:text-gray-100 hover:bg-zinc-700";
+    }
+    if (isAnyInFocus) {
+      return "border-zinc-700 text-gray-500";
+    }
+    return "border-zinc-700";
+  };
+
   return (
-    <article aria-label={`${job.company} experience`}>
-      <button
-        className={`max-md:sticky max-md:top-0 cursor-pointer w-full text-start 
-        border-white border-2 rounded-md flex justify-between mb-2 ${
-          isExpanded ? "bg-zinc-700" : "bg-zinc-800"
-        } focus:bg-zinc-600 hover:bg-zinc-600 transition-colors`}
-        aria-expanded={isExpanded}
-        onClick={onClick}
-      >
-        <div>
-          <h5 className=" text-2xl mx-4 text-start">{job.title}</h5>
-          <div className="flex text-lg flex-wrap">
-            <h4 className="ms-4">{job.company}</h4>
-            <h4 className="ms-4">
-              {job.startYear} - {job.endYear || "Present"}
-            </h4>
-          </div>
+    <article
+      onPointerEnter={onPointerEnter}
+      onPointerLeave={onPointerLeave}
+      aria-label={`${job.company} experience`}
+      className={
+        getFocusStyle() +
+        " border hover:bg-blend-lighten transition-all duration-500 rounded-md m-2 me-8 snap-center"
+      }
+    >
+      <div>
+        <div className="flex text-lg flex-wrap justify-between">
+          <a href={job.url}>
+            <h4 className="mx-4">{job.company}</h4>
+          </a>
+          <h4 className="mx-4">{dateRange}</h4>
         </div>
-        <div
-          className={`m-2 w-10 h-full transition duration-200 ${
-            isExpanded && "rotate-180"
-          }`}
-        >
-          <Chevron />
-        </div>
-      </button>
-      <ul
-        className={`p-4 ${!isExpanded && "hidden"}`}
-        aria-label={`${job.company} responsibilites`}
-        aria-hidden={!isExpanded}
-      >
+        <h5 className=" text-2xl mx-4 text-start">{job.title}</h5>
+      </div>
+      <ul className="p-4" aria-label={`${job.company} responsibilites`}>
         {job.responsibilites.map((responsibility, index) => (
           <li key={index}>{responsibility}</li>
         ))}

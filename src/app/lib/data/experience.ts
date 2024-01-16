@@ -15,8 +15,8 @@ export const workExperience: Job[] = [
     title: "Software Engineer II",
     company: "AllVue Systems",
     url: "https://www.allvuesystems.com/",
-    startYear: 2023,
-    endYear: 2021,
+    startYear: 2021,
+    endYear: 2023,
     responsibilites: [
       "Designed & implemented optimizations for C#-based portfolio analysis application resulting in 95% faster reporting",
       "Architected and built consensus for successful product modernization approach",

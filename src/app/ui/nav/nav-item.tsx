@@ -8,14 +8,8 @@ export interface NavItemProps {
 export default function NavItem(props: NavItemProps) {
   const { record } = { ...props };
   return (
-    <a className="mx-1" href={record.href} download={record.isDownload}>
-      <Image
-        alt={record.altText}
-        src={record.image}
-        className="fill-white"
-        width={30}
-        height={30}
-      />
+    <a className="mx-1 block" href={record.href} download={record.isDownload}>
+      {record.image}
     </a>
   );
 }
