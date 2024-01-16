@@ -8,10 +8,12 @@ export default function About() {
   return (
     <section
       aria-label="About"
-      className="max-md:col-span-2 flex flex-col justify-between py-6"
+      className="max-md:col-span-2 flex flex-col justify-between p-6"
     >
       <article>
-        <h4 className="text-5xl mb-2 ps-5 font-bold pb-1">Hello World!</h4>
+        <h4 className="text-5xl mb-2 ps-5 font-bold pb-1 text-yellow-100">
+          Hello World!
+        </h4>
         <p>
           I'm Josh, a back-end engineer with full stack chops! For{" "}
           {yearsExperience} years and counting, I've helped companies write

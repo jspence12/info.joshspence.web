@@ -42,7 +42,7 @@ export default function Hero(props: HeroProps) {
   }, [title, subtitle]);
 
   return (
-    <div className="y-center bg-zinc-900 shadow-lg py-12">
+    <div className="y-center from-zinc-900 to-zinc-950 bg-gradient-to-r  py-12">
       <div className="x-center w-full">
         <header className="hero flex text-white mx-12 max-md:justify-center max-w-screen-3xl w-full">
           <hgroup>

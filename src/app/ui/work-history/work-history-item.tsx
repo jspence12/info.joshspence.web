@@ -1,4 +1,5 @@
 import Job from "@/app/lib/models/job";
+import Chip from "../common/chip";
 
 export interface WorkHistoryItemProps {
   job: Job;
@@ -22,7 +23,7 @@ export default function WorkHistoryItem({
       return "hover:border-gray-200 hover:text-gray-100 hover:bg-zinc-700";
     }
     if (isAnyInFocus) {
-      return "border-zinc-700 text-gray-500";
+      return "border-zinc-700 opacity-50";
     }
     return "border-zinc-700";
   };
@@ -36,7 +37,7 @@ export default function WorkHistoryItem({
       aria-label={`${job.company} experience`}
       className={
         getFocusStyle() +
-        " border hover:bg-blend-lighten transition-all duration-500 rounded-md m-2 me-4"
+        " border hover:bg-blend-lighten transition-all duration-500 rounded-md m-2 mx-4"
       }
     >
       <div className="flex text-lg flex-wrap justify-between">
@@ -52,6 +53,14 @@ export default function WorkHistoryItem({
       <ul className="p-4" aria-label={`${job.company} responsibilites`}>
         {job.responsibilites.map((responsibility, index) => (
           <li key={index}>{responsibility}</li>
+        ))}
+      </ul>
+      <ul
+        className="flex flex-wrap p-4 gap-2"
+        aria-label={`${job.company} technologies`}
+      >
+        {job.technologies.map((technology) => (
+          <Chip text={technology} key={technology} />
         ))}
       </ul>
     </article>
