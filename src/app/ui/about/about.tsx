@@ -1,9 +1,11 @@
 import Button from "../common/button";
 import Footer from "./footer";
 
-export interface AboutProps {}
+export interface AboutProps {
+  onClickContact: () => void;
+}
 
-export default function About() {
+export default function About({ onClickContact }: AboutProps) {
   const yearsExperience = new Date().getFullYear() - 2019;
   return (
     <section
@@ -30,9 +32,9 @@ export default function About() {
 
       <div>
         <div className="flex justify-center">
-          <div className="grid grid-cols-2 lg:grid-cols-4 justify-center gap-2 my-8 w-full lg:w-3/4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-center gap-2 my-8 w-full lg:w-3/4">
             <Button text="Résumé" href="#" disabled />
-            <Button text="Contact" onClick={() => {}} />
+            <Button text="Contact" onClick={onClickContact} />
             <Button
               text="LinkedIn"
               href="https://www.linkedin.com/in/joshua-spence-1835b8103/"
