@@ -27,10 +27,18 @@ export default function About() {
           — maybe that next team will be yours! Let's talk:
         </p>
       </article>
+
       <div>
-        <div className="flex flex-wrap justify-center gap-2 my-8">
-          <Button text="Résumé" disabled onClick={() => {}} />
-          <Button text="Contact" onClick={() => {}} />
+        <div className="flex justify-center">
+          <div className="grid grid-cols-2 lg:grid-cols-4 justify-center gap-2 my-8 w-full lg:w-3/4">
+            <Button text="Résumé" href="#" disabled />
+            <Button text="Contact" onClick={() => {}} />
+            <Button
+              text="LinkedIn"
+              href="https://www.linkedin.com/in/joshua-spence-1835b8103/"
+            />
+            <Button text="GitHub" href="https://github.com/jspence12" />
+          </div>
         </div>
         <Footer />
       </div>
