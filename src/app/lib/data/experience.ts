@@ -82,7 +82,7 @@ export const workExperience: Job[] = [
       "Write SQL migration scripts as needed for changing business requirements",
     ],
     technologies: [
-      "Net Framework",
+      ".Net Framework",
       "JavaScript",
       "TypeScript",
       "Kotlin",

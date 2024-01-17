@@ -1,5 +1,5 @@
 import Button from "../common/button";
-import Footer from "../nav/footer";
+import Footer from "./footer";
 
 export interface AboutProps {}
 
