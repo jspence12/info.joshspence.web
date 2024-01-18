@@ -68,8 +68,8 @@ export default function WorkHistoryItem({
         aria-label={`${job.company} technologies`}
       >
         {job.technologies.map((technology) => (
-          <li>
-            <Chip text={technology} key={technology} />
+          <li key={technology}>
+            <Chip text={technology} />
           </li>
         ))}
       </ul>
