@@ -47,7 +47,7 @@ export default function Hero(props: HeroProps) {
         <header className="hero flex text-white mx-12 max-md:justify-center max-w-screen-3xl w-full">
           <hgroup>
             <h1
-              className=" text-6xl sm:text-7xl lg:text-8xl mb-3 transition min-h-16 lg:h-24"
+              className=" text-6xl sm:text-7xl lg:text-8xl mb-3 transition min-h-16 lg:h-24 max-md:text-center"
               aria-label={title}
             >
               {header}
