@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import CloseIcon from "./icons/close-icon";
 
 export interface ModalProps {
@@ -8,11 +8,29 @@ export interface ModalProps {
 }
 
 export default function Modal({ title, onClose, children }: ModalProps) {
+  const [hasLoaded, setHasLoaded] = useState(false);
+  useEffect(() => {
+    setHasLoaded(true);
+  });
+
+  const [backgroundOpacity, modalOpacity] = hasLoaded
+    ? ["opacity-50", "opacity-100"]
+    : ["opacity-0", "opacity-0"];
   return (
     <div className="absolute y-center top-0 left-0 right-0 bottom-0">
-      <div className="absolute h-full w-full z-30 bg-black opacity-50" />
+      <div
+        className={
+          "absolute h-full w-full z-30 bg-black transition duration-300 " +
+          backgroundOpacity
+        }
+      />
       <div className="x-center z-30">
-        <div className="bg-zinc-800 border-zinc-600 border w-11/12 md:w-3/4 lg:max-w-screen-md rounded-lg shadow-lg ">
+        <div
+          className={
+            "relative bg-zinc-800 border-zinc-600 border w-11/12 md:w-3/4 lg:max-w-screen-md rounded-lg shadow-lg transition duration-300 " +
+            modalOpacity
+          }
+        >
           <div className="bg-zinc-900 px-5 shadow p-2 rounded-t-lg flex justify-between">
             <h4 className="text-4xl text-yellow-100 font-bold">{title}</h4>
             <button className="y-center  " onClick={onClose}>

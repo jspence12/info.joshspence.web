@@ -8,12 +8,6 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      spacing: {
-        "nav-height": "3.75rem",
-      },
-      colors: {
-        accent: "#58B09C",
-      },
       screens: { "3xl": "1920px" },
     },
   },
