@@ -1,6 +1,6 @@
 "use client";
 import WorkHistory from "./ui/work-history/work-history";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Hero from "./ui/hero/hero";
 import { workExperience } from "./lib/data/experience";
 import About from "./ui/about/about";
@@ -8,6 +8,17 @@ import ContactModal from "./ui/contact/contact-modal";
 
 export default function Home() {
   const [showModal, setShowModal] = useState(false);
+  const initialized = useRef(false);
+
+  useEffect(() => {
+    if (!initialized.current) {
+      initialized.current = true;
+      console.log(
+        "Hi there! I'm happy to see you're poking around. Why not take a look at the source code directly at: https://github.com/jspence12/info.joshspence.web",
+      );
+    }
+  }, []);
+
   return (
     <>
       {showModal && <ContactModal onClose={() => setShowModal(false)} />}

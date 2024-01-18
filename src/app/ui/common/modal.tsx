@@ -9,19 +9,19 @@ export interface ModalProps {
 }
 
 enum ModalState {
-  LOADING = 1,
-  LOADED = 2,
+  OPENING = 1,
+  ACTIVE = 2,
   CLOSING = 3,
 }
 
 export default function Modal({ title, onClose, children }: ModalProps) {
-  const [modalState, setModalState] = useState(ModalState.LOADING);
+  const [modalState, setModalState] = useState(ModalState.OPENING);
   useEffect(() => {
-    if (modalState === ModalState.LOADING) setModalState(ModalState.LOADED);
-  });
+    if (modalState === ModalState.OPENING) setModalState(ModalState.ACTIVE);
+  }, [modalState]);
 
   const [backgroundOpacity, modalOpacity] =
-    modalState === ModalState.LOADED
+    modalState === ModalState.ACTIVE
       ? ["opacity-50", "opacity-100"]
       : ["opacity-0", "opacity-0"];
 
