@@ -42,21 +42,20 @@ export default function WorkHistoryItem({
       }
     >
       <header>
-        <hgroup className="flex text-lg flex-wrap justify-between">
-          <h3>
-            <a
-              href={job.url}
-              className="mx-4 text-yellow-100 hover:text-xl transition-all duration-300 hover:text-yellow-50 ease-in flex gap-1 align-middle"
-            >
-              {job.company}
-              <span className="flex flex-col justify-center" aria-hidden={true}>
-                <Link className="w-3 h-3 text-center" />
-              </span>
-            </a>
-          </h3>
+        <div className="flex text-lg flex-wrap justify-between">
+          <a
+            href={job.url}
+            className="mx-4 text-yellow-100 hover:text-xl transition-all duration-300 hover:text-yellow-50 ease-in flex gap-1 align-middle"
+          >
+            {job.company}
+            <span className="flex flex-col justify-center" aria-hidden={true}>
+              <Link className="w-3 h-3 text-center" />
+            </span>
+          </a>
           <p className="mx-4">{dateRange}</p>
-          <p className=" text-2xl mx-4 text-start">{job.title}</p>
-        </hgroup>
+        </div>
+
+        <h3 className=" text-2xl mx-4 text-start">{job.title}</h3>
       </header>
       <ul className="p-4" aria-label={`${job.company} responsibilites`}>
         {job.responsibilites.map((responsibility, index) => (
