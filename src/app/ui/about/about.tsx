@@ -33,7 +33,7 @@ export default function About({ onClickContact }: AboutProps) {
       <div>
         <div className="flex justify-center">
           <div className="grid grid-cols-2 lg:grid-cols-4 justify-center gap-2 my-8 w-full lg:w-3/4">
-            <Button text="Résumé" href="#" disabled />
+            <Button text="Résumé" href="./Resume-Josh-Spence.pdf" />
             <Button text="Contact" onClick={onClickContact} />
             <Button
               text="LinkedIn"
