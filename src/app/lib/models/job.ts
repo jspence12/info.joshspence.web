@@ -5,4 +5,6 @@ export default interface Job {
   endYear?: number;
   url?: string;
   responsibilites: string[];
+  technologies: string[];
+  test?: string;
 }

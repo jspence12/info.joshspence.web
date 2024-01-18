@@ -1,6 +1,6 @@
 import Job from "@/app/lib/models/job";
 import Chip from "../common/chip";
-import Link from "../../../../public/link";
+import Link from "../common/icons/link-icon";
 
 export interface WorkHistoryItemProps {
   job: Job;

@@ -1,4 +1,5 @@
-import CloseIcon from "../../../../public/close-icon";
+import React from "react";
+import CloseIcon from "./icons/close-icon";
 
 export interface ModalProps {
   title: string;
