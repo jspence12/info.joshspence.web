@@ -12,6 +12,7 @@ describe(WorkHistory.name, () => {
     ],
     startYear: 1999,
     endYear: 2023,
+    technologies: [],
   });
 
   it("renders all jobs", () => {

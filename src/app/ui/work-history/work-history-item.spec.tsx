@@ -11,6 +11,7 @@ describe(WorkHistoryItem.name, () => {
       "I'm good. at dealing. with PEOPLE",
     ],
     startYear: 1999,
+    technologies: [],
   });
 
   it.each([
@@ -21,7 +22,13 @@ describe(WorkHistoryItem.name, () => {
     (endYear: number | undefined, rendered: string) => {
       const job: Job = { ...setupJob(), endYear };
       const sut = render(
-        <WorkHistoryItem job={job} isExpanded={true} onClick={() => {}} />,
+        <WorkHistoryItem
+          job={job}
+          isInFocus={true}
+          isAnyInFocus={true}
+          onPointerEnter={() => {}}
+          onPointerLeave={() => {}}
+        />,
       );
       expect(sut.getByText(job.company)).toBeInTheDocument();
       expect(

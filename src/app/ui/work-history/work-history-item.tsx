@@ -41,19 +41,23 @@ export default function WorkHistoryItem({
         " border hover:bg-blend-lighten transition-all duration-500 rounded-md m-2 mx-4"
       }
     >
-      <div className="flex text-lg flex-wrap justify-between">
-        <a href={job.url}>
-          <h4 className="mx-4 text-yellow-100 hover:text-xl transition-all duration-300 hover:text-yellow-50 ease-in flex gap-1 align-middle">
-            {job.company}
-            <span className="flex flex-col justify-center">
-              <Link className="w-3 h-3 text-center" />
-            </span>
-          </h4>
-        </a>
-        <h4 className="mx-4">{dateRange}</h4>
-      </div>
-      <h5 className=" text-2xl mx-4 text-start">{job.title}</h5>
-
+      <header>
+        <hgroup className="flex text-lg flex-wrap justify-between">
+          <h3>
+            <a
+              href={job.url}
+              className="mx-4 text-yellow-100 hover:text-xl transition-all duration-300 hover:text-yellow-50 ease-in flex gap-1 align-middle"
+            >
+              {job.company}
+              <span className="flex flex-col justify-center" aria-hidden={true}>
+                <Link className="w-3 h-3 text-center" />
+              </span>
+            </a>
+          </h3>
+          <p className="mx-4">{dateRange}</p>
+          <p className=" text-2xl mx-4 text-start">{job.title}</p>
+        </hgroup>
+      </header>
       <ul className="p-4" aria-label={`${job.company} responsibilites`}>
         {job.responsibilites.map((responsibility, index) => (
           <li key={index}>{responsibility}</li>
@@ -64,7 +68,9 @@ export default function WorkHistoryItem({
         aria-label={`${job.company} technologies`}
       >
         {job.technologies.map((technology) => (
-          <Chip text={technology} key={technology} />
+          <li>
+            <Chip text={technology} key={technology} />
+          </li>
         ))}
       </ul>
     </article>

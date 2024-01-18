@@ -5,6 +5,10 @@ export interface AboutProps {
   onClickContact: () => void;
 }
 
+export const aboutTestIds = {
+  dynamicYear: "dynamic-year",
+};
+
 export default function About({ onClickContact }: AboutProps) {
   const yearsExperience = new Date().getFullYear() - 2019;
   return (
@@ -13,10 +17,10 @@ export default function About({ onClickContact }: AboutProps) {
       className="max-md:col-span-2 flex flex-col justify-between p-6"
     >
       <article>
-        <h4 className="text-5xl mb-2 ps-5 font-bold pb-1 text-yellow-100">
+        <h2 className="text-5xl mb-2 ps-5 font-bold pb-1 text-yellow-100">
           Hello World!
-        </h4>
-        <p>
+        </h2>
+        <p data-testid={aboutTestIds.dynamicYear}>
           I&apos;m Josh, a back-end engineer with full stack chops! For{" "}
           {yearsExperience} years and counting, I&apos;ve helped companies write
           maintainable software at scale. I&apos;ve worked on applications with

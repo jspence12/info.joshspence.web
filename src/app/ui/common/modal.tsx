@@ -47,7 +47,7 @@ export default function Modal({ title, onClose, children }: ModalProps) {
           }
         >
           <div className="bg-zinc-900 px-5 shadow p-2 rounded-t-lg flex justify-between">
-            <h4 className="text-4xl text-yellow-100 font-bold">{title}</h4>
+            <h2 className="text-4xl text-yellow-100 font-bold">{title}</h2>
             <button className="y-center  " onClick={fadeOut}>
               <CloseIcon className="h-8 w-8 rounded-full p-1 hover:bg-zinc-700 transition-colors duration-300" />
             </button>

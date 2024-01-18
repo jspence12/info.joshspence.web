@@ -17,13 +17,13 @@ export default function WorkHistory({ jobs }: WorkHistoryProps) {
       className="max-md:col-span-2 md:overflow-y-auto h-full py-6"
       aria-label="work experience"
     >
-      <h4
+      <h2
         className={`transition duration-300 text-5xl ps-6 mb-2 font-bold text-yellow-100${
           focusRow ? " opacity-50" : ""
         }`}
       >
         Experience
-      </h4>
+      </h2>
       {jobs.map((job) => (
         <WorkHistoryItem
           job={job}
