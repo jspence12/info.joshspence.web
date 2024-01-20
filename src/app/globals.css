@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 body {
-  color: rgb(var(--foreground-rgb));
   background-color: theme("colors.zinc.800");
 }
 
@@ -22,7 +21,6 @@ body {
   border-radius: 5px;
 }
 
-
 /* helper classes */
 .x-center {
   display: flex;
@@ -35,3 +33,15 @@ body {
   flex-direction: column;
   justify-content: center;
 }
+
+input, textarea {
+  width: 100%;
+  padding-left: .5rem;
+  padding-right: .5rem;
+  background-color: theme("colors.zinc.900");
+  border-width: 1px;
+  border-radius: .5rem;
+  border-color: theme("colors.zinc.400");
+  resize: none;
+}
+

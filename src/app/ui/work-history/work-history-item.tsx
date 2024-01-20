@@ -6,16 +6,16 @@ export interface WorkHistoryItemProps {
   job: Job;
   isInFocus: boolean;
   isAnyInFocus: boolean;
-  onPointerEnter: () => void;
-  onPointerLeave: () => void;
+  onFocus: () => void;
+  onBlur: () => void;
 }
 
 export default function WorkHistoryItem({
   job,
   isInFocus,
   isAnyInFocus,
-  onPointerEnter,
-  onPointerLeave,
+  onFocus,
+  onBlur,
 }: WorkHistoryItemProps) {
   const dateRange = `${job.startYear} - ${job.endYear || "Present"}`;
 
@@ -31,31 +31,31 @@ export default function WorkHistoryItem({
 
   return (
     <article
-      onPointerEnter={onPointerEnter}
-      onFocus={onPointerEnter}
-      onPointerLeave={onPointerLeave}
-      onBlur={onPointerLeave}
+      onPointerEnter={onFocus}
+      onFocus={onFocus}
+      onPointerLeave={onBlur}
+      onBlur={onBlur}
       aria-label={`${job.company} experience`}
       className={
         getFocusStyle() +
         " border hover:bg-blend-lighten transition-all duration-500 rounded-md m-2 mx-4"
       }
     >
-      <header>
+      <header className="mx-4">
         <div className="flex text-lg flex-wrap justify-between">
           <a
             href={job.url}
-            className="mx-4 text-yellow-100 hover:text-xl transition-all duration-300 hover:text-yellow-50 ease-in flex gap-1 align-middle"
+            className="text-yellow-100 hover:text-xl transition-all duration-300 hover:text-yellow-50 ease-in flex gap-1 align-middle"
           >
             {job.company}
             <span className="flex flex-col justify-center" aria-hidden={true}>
-              <Link className="w-3 h-3 text-center" />
+              <Link className="w-3 h-3" />
             </span>
           </a>
-          <p className="mx-4">{dateRange}</p>
+          <p>{dateRange}</p>
         </div>
 
-        <h3 className=" text-2xl mx-4 text-start">{job.title}</h3>
+        <h3 className="text-2xl">{job.title}</h3>
       </header>
       <ul className="p-4" aria-label={`${job.company} responsibilites`}>
         {job.responsibilites.map((responsibility, index) => (

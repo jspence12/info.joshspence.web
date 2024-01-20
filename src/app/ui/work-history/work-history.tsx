@@ -9,8 +9,8 @@ export interface WorkHistoryProps {
 export default function WorkHistory({ jobs }: WorkHistoryProps) {
   const [focusRow, setFocusRow] = useState("");
 
-  const onPointerEnter = (company: string) => setFocusRow(company);
-  const onPointerLeave = () => setFocusRow("");
+  const onFocus = (company: string) => setFocusRow(company);
+  const onBlur = () => setFocusRow("");
 
   return (
     <section
@@ -30,10 +30,10 @@ export default function WorkHistory({ jobs }: WorkHistoryProps) {
           key={job.company}
           isInFocus={focusRow == job.company}
           isAnyInFocus={focusRow !== ""}
-          onPointerEnter={() => {
-            onPointerEnter(job.company);
+          onFocus={() => {
+            onFocus(job.company);
           }}
-          onPointerLeave={onPointerLeave}
+          onBlur={onBlur}
         />
       ))}
     </section>

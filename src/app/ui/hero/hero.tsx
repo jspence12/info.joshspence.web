@@ -8,8 +8,7 @@ export interface HeroProps {
 
 const isCapital = new RegExp(/[A-Z]/);
 
-export default function Hero(props: HeroProps) {
-  const { title, subtitle } = { ...props };
+export default function Hero({ title, subtitle }: HeroProps) {
   const [header, setHeader] = useState("");
   const [showCursor, setShowCursor] = useState(true);
   const [showSubtitle, setShowSubtitle] = useState(false);
@@ -42,12 +41,12 @@ export default function Hero(props: HeroProps) {
   }, [title, subtitle]);
 
   return (
-    <div className="y-center from-zinc-900 to-zinc-950 bg-gradient-to-r  py-12 font-mono">
+    <div className="y-center from-zinc-900 to-zinc-950 bg-gradient-to-r py-12 font-mono min-h-64">
       <div className="x-center w-full">
         <header className="hero flex text-white mx-12 max-md:justify-center max-w-screen-3xl w-full">
           <hgroup>
             <h1
-              className=" text-6xl sm:text-7xl lg:text-8xl mb-3 transition min-h-16 lg:h-24 max-md:text-center"
+              className="text-6xl sm:text-7xl lg:text-8xl mb-3 transition lg:h-24 max-md:text-center"
               aria-label={title}
             >
               {header}
