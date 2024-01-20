@@ -6,7 +6,11 @@ import { workExperience } from "./lib/data/experience";
 import About from "./ui/about/about";
 import ContactModal from "./ui/contact/contact-modal";
 
-export default function Home() {
+export const testIds = {
+  mainContent: "main-content",
+};
+
+export default function Page() {
   const [showModal, setShowModal] = useState(false);
   const initialized = useRef(false);
 
@@ -22,7 +26,11 @@ export default function Home() {
   return (
     <>
       {showModal && <ContactModal onClose={() => setShowModal(false)} />}
-      <div className="h-screen flex flex-col" aria-hidden={showModal}>
+      <div
+        data-testid={testIds.mainContent}
+        className="h-screen flex flex-col"
+        aria-hidden={showModal}
+      >
         <Hero title="Josh Spence" subtitle="Software Engineer" />
         <div
           className={`flex flex-row justify-center ${

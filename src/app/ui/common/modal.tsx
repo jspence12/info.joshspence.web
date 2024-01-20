@@ -8,6 +8,12 @@ export interface ModalProps {
   onClose: () => void;
 }
 
+export const testIds = {
+  overlay: "modal-overlay",
+  modal: "modal",
+  close: "modal-close",
+};
+
 enum ModalState {
   OPENING = 1,
   ACTIVE = 2,
@@ -36,6 +42,7 @@ export default function Modal({ title, onClose, children }: ModalProps) {
   return (
     <div className="absolute y-center top-0 left-0 right-0 bottom-0">
       <div
+        data-testid={testIds.overlay}
         className={
           "absolute h-full w-full bg-black transition duration-300 " +
           backgroundOpacity
@@ -43,6 +50,7 @@ export default function Modal({ title, onClose, children }: ModalProps) {
       />
       <div className="x-center">
         <div
+          data-testid={testIds.modal}
           className={
             "relative bg-zinc-800 border-zinc-600 border w-11/12 md:w-3/4 lg:max-w-screen-md rounded-lg transition duration-300 " +
             modalOpacity
@@ -54,7 +62,12 @@ export default function Modal({ title, onClose, children }: ModalProps) {
             <h2 id={titleId} className="text-4xl">
               {title}
             </h2>
-            <button className="y-center" onClick={fadeOut} aria-label="Close">
+            <button
+              data-testid={testIds.close}
+              className="y-center"
+              onClick={fadeOut}
+              aria-label="Close"
+            >
               <CloseIcon className="h-8 w-8 rounded-full p-1 hover:bg-zinc-700 transition-colors duration-300" />
             </button>
           </div>

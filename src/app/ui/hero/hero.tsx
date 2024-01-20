@@ -55,7 +55,7 @@ export default function Hero({ title, subtitle }: HeroProps) {
             <p
               role="doc-subtitle"
               className={`text-3xl sm:text-4xl lg:text-6xl ${
-                showSubtitle ? "visible" : "invisible"
+                showSubtitle ? "" : "invisible"
               }`}
             >
               {subtitle}

@@ -10,6 +10,10 @@ export interface WorkHistoryItemProps {
   onBlur: () => void;
 }
 
+export const testIds = {
+  workHistoryItem: "work-history-item",
+};
+
 export default function WorkHistoryItem({
   job,
   isInFocus,
@@ -31,6 +35,7 @@ export default function WorkHistoryItem({
 
   return (
     <article
+      data-testid={testIds.workHistoryItem}
       onPointerEnter={onFocus}
       onFocus={onFocus}
       onPointerLeave={onBlur}
