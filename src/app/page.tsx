@@ -25,11 +25,11 @@ export default function Home() {
       <div className="h-screen flex flex-col" aria-hidden={showModal}>
         <Hero title="Josh Spence" subtitle="Software Engineer" />
         <div
-          className={`flex flex-row justify-center from-zinc-800 to-zinc-900 bg-gradient-to-b ${
+          className={`flex flex-row justify-center ${
             showModal ? "overflow-hidden" : "md:overflow-hidden"
           }`}
         >
-          <main className="mb-auto grid grid-cols-2 gap-4 max-w-screen-3xl h-full transition-all md:divide-x divide-zinc-700">
+          <main className="grid grid-cols-2 gap-4 max-w-screen-3xl transition-all md:divide-x divide-zinc-700">
             <About onClickContact={() => setShowModal(true)} />
             <WorkHistory jobs={workExperience} />
           </main>

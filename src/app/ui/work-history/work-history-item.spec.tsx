@@ -26,8 +26,8 @@ describe(WorkHistoryItem.name, () => {
           job={job}
           isInFocus={true}
           isAnyInFocus={true}
-          onPointerEnter={() => {}}
-          onPointerLeave={() => {}}
+          onFocus={() => {}}
+          onBlur={() => {}}
         />,
       );
       expect(sut.getByText(job.company)).toBeInTheDocument();

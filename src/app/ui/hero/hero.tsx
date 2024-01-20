@@ -41,12 +41,12 @@ export default function Hero({ title, subtitle }: HeroProps) {
   }, [title, subtitle]);
 
   return (
-    <div className="y-center from-zinc-900 to-zinc-950 bg-gradient-to-r py-12 font-mono min-h-64">
-      <div className="x-center w-full">
-        <header className="hero flex text-white mx-12 max-md:justify-center max-w-screen-3xl w-full">
+    <div className="y-center from-zinc-900 to-zinc-950 bg-gradient-to-r font-mono min-h-64">
+      <div className="x-center">
+        <header className="hero text-white mx-12 max-md:justify-center max-w-screen-3xl w-full max-md:text-center">
           <hgroup>
             <h1
-              className="text-6xl sm:text-7xl lg:text-8xl mb-3 transition lg:h-24 max-md:text-center"
+              className="text-5xl sm:text-7xl lg:text-8xl mb-3"
               aria-label={title}
             >
               {header}
@@ -54,7 +54,7 @@ export default function Hero({ title, subtitle }: HeroProps) {
             </h1>
             <p
               role="doc-subtitle"
-              className={`max-sm:text-3xl sm:text-4xl lg:text-6xl max-md:text-center ${
+              className={`text-3xl sm:text-4xl lg:text-6xl ${
                 showSubtitle ? "visible" : "invisible"
               }`}
             >

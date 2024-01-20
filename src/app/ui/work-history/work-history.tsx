@@ -18,8 +18,8 @@ export default function WorkHistory({ jobs }: WorkHistoryProps) {
       aria-label="work experience"
     >
       <h2
-        className={`transition duration-300 text-5xl ps-6 mb-2 font-bold text-yellow-100${
-          focusRow ? " opacity-50" : ""
+        className={`transition duration-300 ps-11 mb-2 ${
+          focusRow && "opacity-50"
         }`}
       >
         Experience
@@ -27,7 +27,7 @@ export default function WorkHistory({ jobs }: WorkHistoryProps) {
       {jobs.map((job) => (
         <WorkHistoryItem
           job={job}
-          key={job.company}
+          key={job.company + job.title}
           isInFocus={focusRow == job.company}
           isAnyInFocus={focusRow !== ""}
           onFocus={() => {

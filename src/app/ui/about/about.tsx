@@ -14,12 +14,10 @@ export default function About({ onClickContact }: AboutProps) {
   return (
     <section
       aria-label="About"
-      className="max-md:col-span-2 flex flex-col justify-between p-6"
+      className="max-md:col-span-2 flex flex-col justify-between p-6 md:pr-2"
     >
       <article>
-        <h2 className="text-5xl mb-2 ps-5 font-bold pb-1 text-yellow-100">
-          Hello World!
-        </h2>
+        <h2 className="mb-3 ps-5">Hello World!</h2>
         <p data-testid={aboutTestIds.dynamicYear}>
           I&apos;m Josh, a back-end engineer with full stack chops! For{" "}
           {yearsExperience} years and counting, I&apos;ve helped companies write

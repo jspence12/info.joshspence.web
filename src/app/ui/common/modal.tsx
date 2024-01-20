@@ -44,14 +44,14 @@ export default function Modal({ title, onClose, children }: ModalProps) {
       <div className="x-center">
         <div
           className={
-            "relative bg-zinc-800 border-zinc-600 border w-11/12 md:w-3/4 lg:max-w-screen-md rounded-lg shadow-lg transition duration-300 " +
+            "relative bg-zinc-800 border-zinc-600 border w-11/12 md:w-3/4 lg:max-w-screen-md rounded-lg transition duration-300 " +
             modalOpacity
           }
           role="dialog"
           aria-labelledby={titleId}
         >
           <div className="bg-zinc-900 px-5 shadow p-2 rounded-t-lg flex justify-between">
-            <h2 id={titleId} className="text-4xl text-yellow-100 font-bold">
+            <h2 id={titleId} className="text-4xl">
               {title}
             </h2>
             <button className="y-center" onClick={fadeOut} aria-label="Close">

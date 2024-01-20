@@ -16,9 +16,7 @@ export default function ContactModal({ onClose }: ContactModalProps) {
     <Modal title="Contact" onClose={onClose}>
       <form className="grid grid-cols-2 gap-2">
         <div className="col-span-2 md:col-span-1">
-          <label className="block ms-2 font-bold" htmlFor={fieldIds.name}>
-            Name
-          </label>
+          <label htmlFor={fieldIds.name}>Name</label>
           <input
             id={fieldIds.name}
             name="name"
@@ -28,9 +26,7 @@ export default function ContactModal({ onClose }: ContactModalProps) {
           />
         </div>
         <div className="col-span-2 md:col-span-1">
-          <label className="ms-2 font-bold" htmlFor={fieldIds.email}>
-            Email
-          </label>
+          <label htmlFor={fieldIds.email}>Email</label>
           <input
             id={fieldIds.email}
             name="email"
@@ -40,9 +36,7 @@ export default function ContactModal({ onClose }: ContactModalProps) {
           />
         </div>
         <div className="col-span-2">
-          <label className="ms-2 font-bold" htmlFor={fieldIds.message}>
-            Message
-          </label>
+          <label htmlFor={fieldIds.message}>Message</label>
           <textarea
             id={fieldIds.message}
             name="message"

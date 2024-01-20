@@ -18,7 +18,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <link rel="icon" href="./favicon.svg" sizes="any" />
-      <body className={`text-gray-200 ${inter.className}`}>{children}</body>
+      <body
+        className={`text-gray-200 from-zinc-800 to-zinc-900 bg-gradient-to-b ${inter.className}`}
+      >
+        {children}
+      </body>
     </html>
   );
 }

@@ -21,7 +21,7 @@ export default function WorkHistoryItem({
 
   const getFocusStyle = () => {
     if (isInFocus) {
-      return "hover:border-gray-200 hover:text-gray-100 hover:bg-zinc-700";
+      return "border-gray-200 text-gray-100 bg-zinc-700";
     }
     if (isAnyInFocus) {
       return "border-zinc-700 opacity-50";
@@ -38,17 +38,17 @@ export default function WorkHistoryItem({
       aria-label={`${job.company} experience`}
       className={
         getFocusStyle() +
-        " border hover:bg-blend-lighten transition-all duration-500 rounded-md m-2 mx-4"
+        " border transition-all duration-500 rounded-md my-2 mx-4"
       }
     >
       <header className="mx-4">
-        <div className="flex text-lg flex-wrap justify-between">
+        <div className="flex flex-wrap justify-between text-lg">
           <a
             href={job.url}
-            className="text-yellow-100 hover:text-xl transition-all duration-300 hover:text-yellow-50 ease-in flex gap-1 align-middle"
+            className="flex gap-1 text-yellow-100 hover:text-yellow-50 hover:text-xl ease-in transition-all duration-300"
           >
             {job.company}
-            <span className="flex flex-col justify-center" aria-hidden={true}>
+            <span className="y-center" aria-hidden={true}>
               <Link className="w-3 h-3" />
             </span>
           </a>
