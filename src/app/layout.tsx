@@ -19,7 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <link rel="icon" href="./favicon.svg" sizes="any" />
       <body
-        className={`text-gray-200 from-zinc-800 to-zinc-900 bg-gradient-to-b ${inter.className}`}
+        className={`text-gray-200 from-zinc-800 to-zinc-900 bg-gradient-to-b bg-fixed ${inter.className}`}
       >
         {children}
       </body>

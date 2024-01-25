@@ -1,5 +1,5 @@
 import { fireEvent, isInaccessible, render } from "@testing-library/react";
-import Page, { testIds } from "./app/page";
+import Page from "./app/page";
 import { act } from "react-dom/test-utils";
 import { testIds as modalTestIds } from "./app/ui/common/modal";
 import { sleep } from "./app/lib/util";
@@ -7,10 +7,10 @@ describe(Page.name, () => {
   it("renders the contact modal when the contact button is clicked", () => {
     const sut = render(<Page />);
     expect(sut.queryByRole("dialog")).toBeNull();
-    expect(isInaccessible(sut.getByTestId(testIds.mainContent))).toBe(false);
+    expect(isInaccessible(sut.getByTestId("main-content"))).toBe(false);
     act(() => fireEvent.click(sut.getByText("Contact")));
     expect(sut.getByRole("dialog")).toBeVisible();
-    expect(isInaccessible(sut.getByTestId(testIds.mainContent))).toBe(true);
+    expect(isInaccessible(sut.getByTestId("main-content"))).toBe(true);
   });
 
   it("closes the contact modal when exiting the contact modal", async () => {
@@ -23,6 +23,6 @@ describe(Page.name, () => {
     });
 
     expect(sut.queryByRole("dialog")).toBeNull();
-    expect(isInaccessible(sut.getByTestId(testIds.mainContent))).toBe(false);
+    expect(isInaccessible(sut.getByTestId("main-content"))).toBe(false);
   });
 });
