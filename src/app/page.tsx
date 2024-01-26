@@ -5,10 +5,25 @@ import Hero from "./ui/hero/hero";
 import { workExperience } from "./lib/data/experience";
 import About from "./ui/about/about";
 import ContactModal from "./ui/contact/contact-modal";
+import Alert, { AlertProps } from "./ui/common/alert";
+import { sendEmail } from "./lib/util";
 
 export default function Page() {
   const [showModal, setShowModal] = useState(false);
+  const [showAlert, setShowAlert] = useState(false);
+
+  const [alertProps, setAlertProps] = useState({
+    success: false,
+    message: "",
+    onClose: () => setShowAlert(false),
+  } as AlertProps);
+
   const initialized = useRef(false);
+
+  const displayAlert = (message: string, success: boolean) => {
+    setAlertProps({ ...alertProps, message, success });
+    setShowAlert(true);
+  };
 
   useEffect(() => {
     if (!initialized.current) {
@@ -21,7 +36,6 @@ export default function Page() {
 
   return (
     <>
-      {showModal && <ContactModal onClose={() => setShowModal(false)} />}
       <div
         data-testid="main-content"
         className="h-screen flex flex-col"
@@ -38,6 +52,15 @@ export default function Page() {
             <WorkHistory jobs={workExperience} />
           </main>
         </div>
+        {showModal && (
+          <ContactModal
+            onClose={() => setShowModal(false)}
+            displayAlert={displayAlert}
+            sendEmail={sendEmail}
+          />
+        )}
+
+        {showAlert && <Alert {...alertProps} />}
       </div>
     </>
   );

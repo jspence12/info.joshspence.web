@@ -1,30 +1,23 @@
 export interface ButtonProps {
   text: string;
-  href?: string;
+  onClick: () => void;
   disabled?: boolean;
-  onClick?: () => void;
+  type?: "submit" | "reset" | "button";
 }
 
-const enabledStyle = "border-gray-200 hover:bg-zinc-700";
-const disabledStyle =
-  "border-gray-400 text-gray-400 pointer pointer-events-none";
-const sharedStyle =
-  "border-2 w-full py-1 rounded-full transition-all font-bold text-center truncate ";
-
-export default function Button({ text, disabled, href, onClick }: ButtonProps) {
-  const target = href?.length && href[0] !== "#" ? "_blank" : undefined;
+export default function Button({ text, onClick, disabled, type }: ButtonProps) {
+  const className =
+    "border-2 w-full py-1 rounded-full transition-all font-bold text-center truncate " +
+    (disabled ? "opacity-50" : "hover:bg-zinc-700");
 
   return (
-    <a
-      aria-disabled={disabled}
-      tabIndex={disabled ? -1 : 0}
-      className={sharedStyle + (disabled ? disabledStyle : enabledStyle)}
-      href={href}
-      target={target}
+    <button
+      className={className}
       onClick={onClick}
-      role={href ? "link" : "button"}
+      disabled={disabled}
+      type={type}
     >
       {text}
-    </a>
+    </button>
   );
 }

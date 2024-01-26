@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import CloseIcon from "./icons/close-icon";
 import { sleep } from "@/app/lib/util";
+import ModalState from "@/app/lib/models/modal-state";
 
 export interface ModalProps {
   title: string;
@@ -13,12 +14,6 @@ export const testIds = {
   modal: "modal",
   close: "modal-close",
 };
-
-enum ModalState {
-  OPENING = 1,
-  ACTIVE = 2,
-  CLOSING = 3,
-}
 
 export default function Modal({ title, onClose, children }: ModalProps) {
   const [modalState, setModalState] = useState(ModalState.OPENING);
@@ -68,7 +63,7 @@ export default function Modal({ title, onClose, children }: ModalProps) {
               onClick={fadeOut}
               aria-label="Close"
             >
-              <CloseIcon className="h-8 w-8 rounded-full p-1 hover:bg-zinc-700 transition-colors duration-300" />
+              <CloseIcon className="h-8 w-8 rounded-full p-1 hover:bg-white hover:bg-opacity-20 transition-all duration-300" />
             </button>
           </div>
           <div className="mx-8 my-4">{children}</div>

@@ -1,3 +1,4 @@
+import AnchorButton from "../common/anchor-button";
 import Button from "../common/button";
 import Footer from "./footer";
 
@@ -35,13 +36,13 @@ export default function About({ onClickContact }: AboutProps) {
       <div>
         <div className="flex justify-center">
           <div className="grid grid-cols-2 lg:grid-cols-4 justify-center gap-2 my-8 w-full lg:w-3/4">
-            <Button text="Résumé" href="./Resume-Josh-Spence.pdf" />
+            <AnchorButton text="Résumé" href="./Resume-Josh-Spence.pdf" />
             <Button text="Contact" onClick={onClickContact} />
-            <Button
+            <AnchorButton
               text="LinkedIn"
               href="https://www.linkedin.com/in/joshua-spence-1835b8103/"
             />
-            <Button text="GitHub" href="https://github.com/jspence12" />
+            <AnchorButton text="GitHub" href="https://github.com/jspence12" />
           </div>
         </div>
         <Footer />
