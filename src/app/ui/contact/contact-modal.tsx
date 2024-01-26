@@ -2,6 +2,7 @@ import { useState } from "react";
 import Modal from "../common/modal";
 import Button from "../common/button";
 import ContactPayload from "@/app/lib/models/contact-payload";
+import LoadingIcon from "../common/icons/loading-icon";
 
 const fieldIds = {
   name: "contact-name",
@@ -44,10 +45,18 @@ export default function ContactModal({
 
   return (
     <Modal title="Contact" onClose={onClose}>
+      {sending && (
+        <div className="absolute x-center top-0 left-0 right-0 bottom-0 z-10">
+          <div className="y-center text-yellow-100">
+            <LoadingIcon className="h-24 w-24 animate-spin text-yellow-100" />
+          </div>
+        </div>
+      )}
       <form className={`grid grid-cols-2 gap-2 ${sending ? "opacity-50" : ""}`}>
         <div className="col-span-2 md:col-span-1">
           <label htmlFor={fieldIds.name}>Name</label>
           <input
+            autoFocus
             id={fieldIds.name}
             name="name"
             type="text"

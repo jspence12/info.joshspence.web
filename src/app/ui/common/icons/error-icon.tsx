@@ -1,6 +1,6 @@
-import { SvgIconProps } from "@material-ui/core";
+import IconProps from "./icon-props";
 
-export default function ErrorIcon({ className }: SvgIconProps) {
+export default function ErrorIcon({ className }: IconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

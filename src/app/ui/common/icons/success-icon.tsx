@@ -1,4 +1,4 @@
-import { IconProps } from "@material-ui/core";
+import IconProps from "./icon-props";
 
 export default function SuccessIcon({ className }: IconProps) {
   return (
